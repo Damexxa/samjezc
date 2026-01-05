@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Samjez Computers and Cafe</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Inter:wght@400;500&display=swap');
+
+        /* ===== GLOBAL ===== */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #111;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.2rem;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background-color: #001f3f;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .logo {
+            max-width: 300px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        header h1 {
+            margin: 10px 0;
+            font-size: 2.5rem;
+        }
+
+        .typing {
+            font-size: 1.2rem;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .typing::after {
+            content: "|";
+            margin-left: 5px;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0; }
+        }
+
+        /* ===== NAVBAR ===== */
+        nav {
+            background-color: #007bff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .menu-toggle {
+            display: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        #about {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid #007bff;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .about-text h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #001f3f;
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: #007bff;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: #001f3f;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+
+        /* ===== WHATSAPP FLOATING BUTTON ===== */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 9999;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #25D366;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-btn img {
+            width: 35px;
+            height: 35px;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #0056b3;
+                margin-top: 15px;
+                padding: 20px 0;
+                gap: 20px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .profile-img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .about-text {
+                padding: 25px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./logo.jpeg" alt="Samjez Computers and Cafe Logo" class="logo">
+        <h1>Samjez Computers and Cafe</h1>
+        <p class="typing" id="typing-text"></p>
+        <p>I SELL | I SWAP</p>
+    </header>
+
+    <nav>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./index.html">Products</a></li>
+            <li><a href="./swap.html">Swap</a></li>
+            <li><a href="./aboutme.html">About Me</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <img src="./about.jpeg" alt="Samuel Jeremiah Zhokwo (Samjez)" class="profile-img">
+        <div class="about-text">
+            <h2>About Samuel Jeremiah Zhokwo (Samjez)</h2>
+            <p><span class="highlight">Samuel Jeremiah Zhokwo</span>, short for <span class="highlight">SAMJEZ</span>, is the Chief Executive Officer (CEO) of Samjez Computers And Cafe Limited.</p>
+            <p>He was born into the family of Mr. and Mrs. Samuel. He is the third born of the house and the first son of his family, born on <span class="highlight">23rd July 2000</span> in Abuja.</p>
+            <p>He is from the Federal Capital Territory Abuja, a native of Abuja, and holds a first degree in Computer and Mathematics from the National Open University of Nigeria (NOUN).</p>
+            <p>He started his computer journey as a computer operator at Success Computer Business Center, Gwako Gwagwalada FCT Abuja in <span class="highlight">2013</span>, and earned a diploma in Computer Operations by 2014. He has been working on his dreams for over <span class="highlight">11 years</span> now.</p>
+            <p>He owns a computer Internet café in Bassa Jiwa Airport Abuja FCT, which has been legally operating since <span class="highlight">five years</span> now (2022).</p>
+            <p>His passion for bringing technology to everyone’s doorstep led him to venture into laptop dealership, which he has been running for over <span class="highlight">three years</span> now (2024). The laptop showroom will soon be ready.</p>
+            <p>He started this dream with <span class="highlight">no money, no connection, no help — just hope and the back of dreams</span>.</p>
+            <p style="font-style: italic; text-align: center; font-size: 1.2rem; margin-top: 40px;">“I hope if I can do it, you can also do it. If not Samjez Computers And Cafe, it can’t be like Samjez Computers And Cafe.”</p>
+        </div>
+    </section>
+
+    <a href="https://wa.me/2348105800076" target="_blank" class="whatsapp-btn">
+      <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp">
+    </a>
+
+    <footer>
+        <p>&copy; 2026 Samjez Computers and Cafe. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('menu-toggle').addEventListener('click', () => {
+            document.getElementById('nav-links').classList.toggle('active');
+        });
+
+        // Typing effect
+        const text = "...Bringing technology to your doorstep.";
+        const speed = 70;
+        let index = 0;
+
+        function typeText() {
+            if (index < text.length) {
+                document.getElementById("typing-text").textContent += text.charAt(index);
+                index++;
+                setTimeout(typeText, speed);
+            }
+        }
+
+        typeText();
+
+        // ===== SEO & PERFORMANCE =====
+        document.head.insertAdjacentHTML('beforeend', `
+            <meta name="description" content="Samjez Computers and Cafe - Buy, swap, and upgrade laptops, desktops, and accessories in Nigeria.">
+            <meta name="keywords" content="Laptops, Swap, Computers, Nigeria, HP, Dell, Accessories">
+            <meta name="author" content="Samjez Computers and Cafe">
+            <meta name="robots" content="index, follow">
+        `);
+    </script>
+</body>
+</html>

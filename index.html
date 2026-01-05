@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samjez Computers and Cafe</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Inter:wght@400;500&display=swap');
+/* ===== WHY US ===== */
+#why-us {
+    background: #ffffff;
+    margin-top: 40px;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.why-card {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* ===== SERVICES ===== */
+#services {
+    background: #f1f5f9;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.service-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* ===== TRUST ===== */
+#trust {
+    text-align: center;
+    background: #ffffff;
+}
+
+.trust-text {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color: #555;
+}
+
+.trust-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.trust-stats h3 {
+    color: #007bff;
+    font-size: 2rem;
+}
+
+/* ===== CTA ===== */
+#cta {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+/* ===== CUSTOMER REVIEWS ===== */
+#reviews {
+    background: #f8f9fa;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.reviews-slider {
+    display: flex;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    position: relative;
+}
+
+.review-slide {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.review-slide p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.review-slide h4 {
+    font-weight: 600;
+    color: #007bff;
+}
+
+.reviews-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.reviews-controls button {
+    font-size: 24px;
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.reviews-controls button:hover {
+    background: #0056b3;
+}
+
+/* ===== WARRANTY / POLICY ===== */
+#warranty {
+    background: #ffffff;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+#warranty p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* ===== WHATSAPP FLOATING BUTTON ===== */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 9999;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #25D366;
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-btn img {
+    width: 35px;
+    height: 35px;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+    .reviews-slider { flex-direction: column; }
+}
+
+.cta-btn {
+    display: inline-block;
+    margin-top: 20px;
+    background: white;
+    color: #007bff;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.cta-btn:hover {
+    background: #e6e6e6;
+}
+/* ===== PRELOADER ===== */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #001f3f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out;
+}
+
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #007bff;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ===== GLOBAL TYPOGRAPHY ===== */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #111;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+/* Desktop typography */
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 3rem;
+    line-height: 1.15;
+  }
+
+  p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+}
+
+/* ===== HEADER ===== */
+header {
+  background-color: #001f3f;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.logo {
+  max-width: 300px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  background-color: #007bff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.menu-toggle {
+  display: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* ===== CART ===== */
+.cart-icon {
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+}
+
+/* ===== SECTIONS ===== */
+section {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== SEARCH BAR ===== */
+#search-container {
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+#search-input {
+  width: 80%;
+  max-width: 400px;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 30px 0 0 30px;
+  outline: none;
+}
+
+#search-btn {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 0 30px 30px 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#search-btn:hover {
+  background-color: #0056b3;
+}
+
+#no-results {
+  text-align: center;
+  color: #999;
+  font-size: 18px;
+  margin: 40px 0;
+  display: none;
+}
+
+/* ===== PRODUCTS ===== */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+.product-card.visible {
+  display: block;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-card button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+.product-card button:hover {
+  background-color: #0056b3;
+}
+
+/* ===== LOAD MORE ===== */
+#load-more {
+  display: block;
+  margin: 30px auto;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+#load-more:hover {
+  background-color: #0056b3;
+}
+
+/* ===== MODALS ===== */
+#checkout-modal,
+#swap-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  max-width: 500px;
+  width: 90%;
+  border-radius: 8px;
+}
+
+#close-checkout,
+#close-swap {
+  float: right;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/* Modern Cart Modal */
+#cart-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.cart-header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 22px;
+    position: relative;
+}
+
+#close-cart {
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    font-size: 32px;
+    cursor: pointer;
+    color: white;
+    opacity: 0.9;
+}
+
+#close-cart:hover {
+    opacity: 1;
+}
+
+.cart-items {
+    padding: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item-name {
+    font-weight: 600;
+    font-size: 16px;
+    flex: 1;
+}
+
+.cart-item-price {
+    font-weight: bold;
+    color: #007bff;
+    margin-right: 15px;
+}
+
+.remove-item {
+    background: #ff4444;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.remove-item:hover {
+    background: #cc0000;
+}
+
+.cart-total {
+    padding: 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    border-top: 1px solid #ddd;
+}
+
+.cart-total span {
+    color: #007bff;
+    font-size: 24px;
+}
+
+.checkout-btn {
+    display: block;
+    width: 80%;
+    margin: 20px auto 30px;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.checkout-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* ===== FORMS ===== */
+form input,
+form textarea,
+form button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: #001f3f;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #0056b3;
+    margin-top: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  #search-input {
+    width: 70%;
+  }
+}
+.typing {
+  font-size: 1.1rem;
+  color: #ffffff;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.typing::after {
+  content: "|";
+  margin-left: 5px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+    </style>
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- EmailJS CDN -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <header>
+        <img src="./logo.jpeg" alt="Samjez Computers and Cafe Logo" class="logo">
+        <h1>Samjez Computers and Cafe</h1>
+        <p class="typing" id="typing-text"></p>
+        <p>I SELL | I SWAP</p>
+    </header>
+
+    <nav>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        
+        <ul class="nav-links" id="nav-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="./swap.html">Swap</a></li>
+            <li><a href="./aboutme.html">About</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+
+        <div class="right-side">
+            <div class="cart-icon" id="cart-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 256 256">
+                    <path d="M222.14,58.88A8,8,0,0,0,216,56H54.68L49.79,29.14A8,8,0,0,0,42,24H16a8,8,0,0,0,0,16H40l16.47,117.29A16,16,0,0,0,72,168H200a16,16,0,0,0,15.53-12.12L232,48.12A8,8,0,0,0,222.14,58.88ZM200,152H72l-13.33-95H212.2Z"></path>
+                    <circle cx="80" cy="204" r="16"></circle>
+                    <circle cx="184" cy="204" r="16"></circle>
+                </svg>
+                <span class="cart-count" id="cart-count">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home">
+        <h2>Welcome to Samjez Computers and Cafe</h2>
+        <p>Browse our selection of computers, accessories, and cafe items. Add to cart and submit your order—we'll handle the rest!</p>
+    </section>
+
+    <section id="products">
+        <h2>Products</h2>
+        
+        <!-- Search Bar -->
+        <div id="search-container">
+            <input type="text" id="search-input" placeholder="Search for laptops, accessories, etc...">
+            <button id="search-btn">Search</button>
+        </div>
+        <p id="no-results">No products found. Try a different search term!</p>
+
+        <div class="products-grid" id="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="./300.jpeg" alt="HP G Series 3">
+                <h3>HP G Series 3</h3>
+                <p>Processor: Intel Core i5-6200U Display: 13-inch, often Full HD (1920x1080) anti-glare, with optional touch. Graphics: Integrated Intel HD Graphics 520. Memory (RAM): Typically 8GB DDR4, upgradeable. Storage: SSDs 256GB. Ports: VGA, HDMI, USB 3.0, Ethernet, DisplayPort, USB-C, SIM slot Security: Fingerprint reader, Smart Card Reader, Kensington Lock. Keyboard: Spill-resistant, backlit. Audio: Bang & Olufsen speakers. OS: Comes with Windows 11 Pro.</p>
+                <p>₦300,000</p>
+                <button onclick="addToCart('HP G Series 3', 300000)">Add to Cart</button>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="./550.jpeg" alt="Hp Elitebook 1030 G2">
+                <h3>Hp Elitebook 1030 G2</h3>
+                <p>Core i7 ||2.8 to 3.9 GHZ 16gb RAM 512gb SSD FHD Touchscreen 13.3" Fingerprint Face ID X360 foldable 7th Generation Pen support</p>
+                <p>₦565,000</p>
+                <button onclick="addToCart('Hp Elitebook 1030 G2', 565000)">Add to Cart</button>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="./440.jpeg" alt="Hp Elitebook 840 G6">
+                <h3>Hp Elitebook 840 G6 (8th Generation)</h3>
+                <p>Processor: core i7@1.8ghz to 4.6ghz RAM: 16GB Storage: 512GB 14" anti glare non-touch screen UHD Graphics 620 Windows 11 Fingerprint, Face ID WiFi 6, Bluetooth 5.0 2 USB-A, 1 USB-C, HDMI, RJ-45</p>
+                <p>₦460,000</p>
+                <button onclick="addToCart('Hp Elitebook 840 G6', 460000)">Add to Cart</button>
+            </div>
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="./700.jpeg" alt="Dell XPS 13 9380">
+                <h3>Dell XPS 13 9380</h3>
+                <p>Intel®️ Core™️ i7 processor 16GB RAM upgradable 512GB SSD upgradable 13.3" FHD Touchscreen edge-to-edge display Ultra-slim, Fingerprint reader & Windows Backlit keyboard Battery Life:Up to 6hrs hours</p>
+                <p>₦700,000</p>
+                <button onclick="addToCart('Dell XPS 13 9380', 700000)">Add to Cart</button>
+            </div>
+            <!-- Add the rest of your 20 products here with similar structure and ₦ prices -->
+            <!-- Example for more -->
+            <div class="product-card">
+                <img src="./550.jpeg" alt="Convertible Laptop">
+                <h3>Convertible Laptop</h3>
+                <p>2-in-1 convertible with touch screen, stylus support, and versatile design for tablet mode.</p>
+                <p>₦800,000</p>
+                <button onclick="addToCart('Convertible Laptop', 800000)">Add to Cart</button>
+            </div>
+            <!-- Continue with all other products using ₦ and correct prices/names -->
+        </div>
+        <button id="load-more">Load More</button>
+    </section>
+
+    <!-- Other sections (swap, about, contact) remain the same -->
+
+    <!-- Cart Modal -->
+    <div id="cart-modal">
+        <div class="cart-header">
+            Your Cart
+            <span id="close-cart" onclick="closeModal('cart-modal')">&times;</span>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-total">
+            Total: ₦<span id="cart-total">0</span>
+        </div>
+        <button class="checkout-btn" onclick="showCheckout()">Checkout</button>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal">
+        <span id="close-checkout" onclick="closeModal('checkout-modal')">&times;</span>
+        <h2>Submit Order</h2>
+        <form id="checkout-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="address" placeholder="Delivery Address" required></textarea>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <textarea name="notes" placeholder="Additional Notes"></textarea>
+            <button type="submit">Send Order</button>
+        </form>
+    </div>
+<section id="why-us">
+    <h2>Why Choose Samjez Computers & Cafe?</h2>
+
+    <div class="why-grid">
+        <div class="why-card">
+            <h3><img src="./laptop.png" alt="laptop" height="70px"><br> Quality Tested Devices</h3>
+            <p>All laptops and accessories are fully tested, cleaned, and verified before sale.</p>
+        </div>
+
+        <div class="why-card">
+            <h3><img src="./phone.png" alt="phone" height="70px"><br> Swap & Upgrade</h3>
+            <p>Bring your old laptop and swap for a better one with flexible price differences.</p>
+        </div>
+
+        <div class="why-card">
+            <h3><img src="./delivery.png" alt="delivery" height="70px"> <br> Nationwide Delivery</h3>
+            <p>We deliver safely across Nigeria with trusted logistics partners.</p>
+        </div>
+
+        <div class="why-card">
+            <h3><img src="./tools.png" alt="tools" height="70px"><br> After-Sales Support</h3>
+            <p>We offer guidance, setup help, and support even after purchase.</p>
+        </div>
+    </div>
+</section>
+
+<section id="services">
+    <h2>Our Services</h2>
+
+    <div class="services-grid">
+        <div class="service-card">
+            <h3>Computer Sales</h3>
+            <p>New & UK-used laptops, desktops, and accessories at affordable prices.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Computer Swap</h3>
+            <p>Upgrade your device by swapping with newer models.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Printing & Browsing</h3>
+            <p>High-speed internet browsing, printing, scanning, and photocopying.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Software Installation</h3>
+            <p>Windows, Office, drivers, and essential software installation.</p>
+        </div>
+    </div>
+</section>
+
+<section id="trust">
+    <h2>Trusted by Customers</h2>
+    <p class="trust-text">
+        Hundreds of satisfied customers trust Samjez Computers & Cafe for reliable devices and honest service.
+    </p>
+
+    <div class="trust-stats">
+        <div>
+            <h3>500+</h3>
+            <p>Devices Sold</p>
+        </div>
+        <div>
+            <h3>98%</h3>
+            <p>Customer Satisfaction</p>
+        </div>
+        <div>
+            <h3>5+ Years</h3>
+            <p>Experience</p>
+        </div>
+    </div>
+</section>
+
+<section id="cta">
+    <h2>Ready to Buy or Swap?</h2>
+    <p>Browse our products or contact us today to get the best tech deals.</p>
+    <a href="#products" class="cta-btn">Browse Products</a>
+</section>
+<!-- ===== CUSTOMER REVIEWS ===== -->
+<section id="reviews">
+  <h2>What Our Customers Say</h2>
+  <div class="reviews-slider">
+    <div class="review-slide">
+      <p>"Amazing service! Bought my laptop here and the swap process was seamless."</p>
+      <h4>- Chinedu O.</h4>
+    </div>
+    <div class="review-slide">
+      <p>"Fast delivery and very helpful staff. Highly recommend Samjez Computers & Cafe."</p>
+      <h4>- Aisha T.</h4>
+    </div>
+    <div class="review-slide">
+      <p>"Great quality laptops at fair prices. The after-sales support is top-notch!"</p>
+      <h4>- Emeka J.</h4>
+    </div>
+  </div>
+  <div class="reviews-controls">
+    <button id="prev-review">&#10094;</button>
+    <button id="next-review">&#10095;</button>
+  </div>
+</section>
+
+<!-- ===== WARRANTY / POLICY ===== -->
+<section id="warranty">
+  <h2>Warranty & Policy</h2>
+  <p>All devices sold come with a 3-month warranty covering hardware defects. Swaps are allowed within 7 days of purchase if device is not as described. Your satisfaction is our priority.</p>
+</section>
+
+<!-- ===== WHATSAPP FLOATING BUTTON ===== -->
+<a href="https://wa.me/2348105800076" target="_blank" class="whatsapp-btn">
+  <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp">
+</a>
+    <footer>
+        <p>&copy; 2026 Samjez Computers and Cafe. All rights reserved.</p>
+    </footer>
+
+    <script>
+      // ===== CUSTOMER REVIEWS SLIDER =====
+let currentReview = 0;
+const slides = document.querySelectorAll('.review-slide');
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.style.transform = `translateX(${100 * (i - index)}%)`;
+    });
+}
+
+document.getElementById('prev-review').addEventListener('click', () => {
+    currentReview = (currentReview - 1 + slides.length) % slides.length;
+    showSlide(currentReview);
+});
+
+document.getElementById('next-review').addEventListener('click', () => {
+    currentReview = (currentReview + 1) % slides.length;
+    showSlide(currentReview);
+});
+
+// Auto-slide every 5 seconds
+setInterval(() => {
+    currentReview = (currentReview + 1) % slides.length;
+    showSlide(currentReview);
+}, 5000);
+
+showSlide(currentReview);
+
+// ===== SEO & PERFORMANCE =====
+// Basic meta improvements (Add these in <head> if not already)
+document.head.insertAdjacentHTML('beforeend', `
+<meta name="description" content="Samjez Computers and Cafe - Buy, swap, and upgrade laptops, desktops, and accessories in Nigeria.">
+<meta name="keywords" content="Laptops, Swap, Computers, Nigeria, HP, Dell, Accessories">
+<meta name="author" content="Samjez Computers and Cafe">
+<meta name="robots" content="index, follow">
+`);
+        // Preloader
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        });
+
+        // EmailJS Init
+        (function() {
+            emailjs.init('Es3F_dwsP6W4t8zv9'); // Replace with your EmailJS public key
+        })();
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const productCards = document.querySelectorAll('.product-card');
+        const productsGrid = document.getElementById('products-grid');
+        const noResultsMsg = document.getElementById('no-results');
+        let visibleCount = 8; // Increased initial visible for better UX
+        const increment = 8;
+
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', () => {
+            document.getElementById('nav-links').classList.toggle('active');
+        });
+
+        function updateCartDisplay() {
+            document.getElementById('cart-count').textContent = cart.length;
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCartDisplay();
+            Swal.fire({
+                icon: 'success',
+                title: 'Added!',
+                text: `${name} has been added to your cart.`,
+                timer: 1500,
+                showConfirmButton: false
+            });
+        }
+
+        function showCart() {
+            const itemsContainer = document.getElementById('cart-items');
+            itemsContainer.innerHTML = '';
+            let total = 0;
+
+            if (cart.length === 0) {
+                itemsContainer.innerHTML = '<p style="text-align:center; color:#999; padding:20px;">Your cart is empty</p>';
+            } else {
+                cart.forEach((item, index) => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'cart-item';
+                    itemDiv.innerHTML = `
+                        <span class="cart-item-name">${item.name}</span>
+                        <span class="cart-item-price">₦${item.price.toLocaleString()}</span>
+                        <button class="remove-item" onclick="removeFromCart(${index})">&times;</button>
+                    `;
+                    itemsContainer.appendChild(itemDiv);
+                    total += item.price;
+                });
+            }
+
+            document.getElementById('cart-total').textContent = total.toLocaleString();
+            document.getElementById('cart-modal').style.display = 'block';
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartDisplay();
+            showCart();
+        }
+
+        function showCheckout() {
+            closeModal('cart-modal');
+            document.getElementById('checkout-modal').style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Search Functionality
+        function performSearch() {
+            const query = document.getElementById('search-input').value.trim().toLowerCase();
+            let hasResults = false;
+
+            productCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.textContent.toLowerCase();
+                if (title.includes(query) || description.includes(query)) {
+                    card.classList.add('visible');
+                    hasResults = true;
+                } else {
+                    card.classList.remove('visible');
+                }
+            });
+
+            noResultsMsg.style.display = hasResults ? 'none' : 'block';
+            document.getElementById('load-more').style.display = 'none'; // Hide load more during search
+        }
+
+        document.getElementById('search-btn').addEventListener('click', performSearch);
+        document.getElementById('search-input').addEventListener('keyup', (e) => {
+            if (e.key === 'Enter') performSearch();
+        });
+
+        // Clear search to show all (initial load)
+        function showAllProducts() {
+            let shown = 0;
+            productCards.forEach((card, i) => {
+                if (i < visibleCount) {
+                    card.classList.add('visible');
+                    shown++;
+                } else {
+                    card.classList.remove('visible');
+                }
+            });
+            noResultsMsg.style.display = 'none';
+            document.getElementById('load-more').style.display = shown >= productCards.length ? 'none' : 'block';
+        }
+
+        // Load More
+        document.getElementById('load-more').addEventListener('click', () => {
+            visibleCount += increment;
+            showAllProducts();
+        });
+
+        // Initial display
+        showAllProducts();
+
+        // Cart link
+        document.getElementById('cart-link').addEventListener('click', showCart);
+
+        updateCartDisplay();
+
+        // Checkout submit
+        document.getElementById('checkout-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            let total = cart.reduce((sum, item) => sum + item.price, 0);
+            let orderList = cart.map(item => `${item.name} - ₦${item.price.toLocaleString()}`).join('\n');
+
+            const templateParams = {
+                from_name: this.name.value,
+                from_email: this.email.value,
+                phone: this.phone.value,
+                address: this.address.value,
+                notes: this.notes.value,
+                order_details: orderList,
+                total_amount: '₦' + total.toLocaleString()
+            };
+
+            emailjs.send('service_4eaofr9', 'template_idue7m7', templateParams)
+                .then(() => {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Order Submitted!',
+                        text: 'Thank you! We will contact you soon.',
+                    });
+                    cart = [];
+                    updateCartDisplay();
+                    this.reset();
+                    closeModal('checkout-modal');
+                }, (error) => {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Failed to send order. Please try again.',
+                    });
+                    console.error(error);
+                });
+        });
+
+        // Typing effect
+        const text = "...Bringing technology to your doorstep.";
+        const speed = 70;
+        let index = 0;
+
+        function typeText() {
+            if (index < text.length) {
+                document.getElementById("typing-text").textContent += text.charAt(index);
+                index++;
+                setTimeout(typeText, speed);
+            }
+        }
+
+        typeText();
+    </script>
+</body>
+</html>

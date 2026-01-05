@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap Request - Samjez Computers and Cafe</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Inter:wght@400;500&display=swap');
+
+        /* ===== PRELOADER ===== */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #001f3f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .spinner {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #007bff;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* ===== GLOBAL ===== */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #111;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background-color: #001f3f;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .logo {
+            max-width: 300px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        header h1 {
+            margin: 10px 0;
+            font-size: 2.5rem;
+        }
+
+        .typing {
+            font-size: 1.2rem;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .typing::after {
+            content: "|";
+            margin-left: 5px;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0; }
+        }
+
+        /* ===== NAVBAR ===== */
+        nav {
+            background-color: #007bff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .menu-toggle {
+            display: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== SWAP SECTION ===== */
+        #swap {
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        #swap h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #001f3f;
+        }
+
+        #swap p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            color: #555;
+        }
+
+        .swap-form-container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .swap-form-container form {
+            text-align: left;
+        }
+
+        .swap-form-container input,
+        .swap-form-container textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 12px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        .swap-form-container textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .swap-form-container button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .swap-form-container button:hover {
+            background-color: #0056b3;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: #001f3f;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+        /* ===== CUSTOMER REVIEWS ===== */
+#reviews {
+    background: #f8f9fa;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.reviews-slider {
+    display: flex;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    position: relative;
+}
+
+.review-slide {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.review-slide p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.review-slide h4 {
+    font-weight: 600;
+    color: #007bff;
+}
+
+.reviews-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.reviews-controls button {
+    font-size: 24px;
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.reviews-controls button:hover {
+    background: #0056b3;
+}
+
+/* ===== WARRANTY / POLICY ===== */
+#warranty {
+    background: #ffffff;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+#warranty p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* ===== WHATSAPP FLOATING BUTTON ===== */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 9999;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #25D366;
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-btn img {
+    width: 35px;
+    height: 35px;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+    .reviews-slider { flex-direction: column; }
+}
+        /* ===== MOBILE ===== */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #0056b3;
+                margin-top: 15px;
+                padding: 20px 0;
+                gap: 20px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            #swap h2 {
+                font-size: 2rem;
+            }
+
+            .swap-form-container {
+                padding: 25px;
+            }
+        }
+    </style>
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- EmailJS CDN -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <header>
+        <img src="./logo.jpeg" alt="Samjez Computers and Cafe Logo" class="logo">
+        <h1>Samjez Computers and Cafe</h1>
+        <p class="typing" id="typing-text"></p>
+        <p>I SELL | I SWAP</p>
+    </header>
+
+    <nav>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        
+        <ul class="nav-links" id="nav-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./index.html">Products</a></li>
+            <li><a href="./swap.html">Swap</a></li>
+            <li><a href="./aboutme.html">About Me</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="swap">
+        <h2>Request a Swap</h2>
+        <p>Want to swap your old laptop or device for something new? Fill in the details below and we'll get back to you with a fair offer!</p>
+
+        <div class="swap-form-container">
+            <form id="swap-form">
+                <input type="text" name="name" placeholder="Your Full Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                
+                <textarea name="current_device" placeholder="Describe the device you want to swap (e.g., brand, model, specs, condition, age)" required></textarea>
+                
+                <textarea name="desired_device" placeholder="What device would you like in exchange? (e.g., specific laptop model or budget range)" required></textarea>
+                
+                <textarea name="additional_notes" placeholder="Any additional information (photos can be sent via WhatsApp after we contact you)"></textarea>
+                
+                <button type="submit">Submit Swap Request</button>
+            </form>
+        </div>
+    </section>
+    <a href="https://wa.me/2348105800076" target="_blank" class="whatsapp-btn">
+      <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp">
+    </a>
+
+
+    <footer>
+        <p>&copy; 2026 Samjez Computers and Cafe. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        });
+
+        // Mobile Menu Toggle
+        document.getElementById('menu-toggle').addEventListener('click', () => {
+            document.getElementById('nav-links').classList.toggle('active');
+        });
+
+        // EmailJS Init (REPLACE WITH YOUR PUBLIC KEY)
+        (function() {
+            emailjs.init('YOUR_PUBLIC_KEY_HERE');
+        })();
+
+        // Swap Form Submit
+        document.getElementById('swap-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const templateParams = {
+                from_name: this.name.value,
+                from_email: this.email.value,
+                phone: this.phone.value,
+                current_device: this.current_device.value,
+                desired_device: this.desired_device.value,
+                additional_notes: this.additional_notes.value
+            };
+
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_SWAP_TEMPLATE_ID', templateParams)
+                .then(() => {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Swap Request Sent!',
+                        text: 'Thank you! We will review your swap request and contact you soon.',
+                        confirmButtonText: 'OK'
+                    });
+                    this.reset();
+                }, (error) => {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Failed to send request. Please try again later.',
+                        confirmButtonText: 'OK'
+                    });
+                    console.error('EmailJS error:', error);
+                });
+        });
+
+        // Typing effect
+        const text = "...Bringing technology to your doorstep.";
+        const speed = 70;
+        let index = 0;
+
+        function typeText() {
+            if (index < text.length) {
+                document.getElementById("typing-text").textContent += text.charAt(index);
+                index++;
+                setTimeout(typeText, speed);
+            }
+        }
+
+        typeText();
+    </script>
+</body>
+</html>
