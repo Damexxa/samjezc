@@ -362,7 +362,7 @@ section {
 }
 
 #search-btn {
-  padding: 10px 15px;
+  padding: 10px 12px;
   background-color: #007bff;
   color: white;
   border: none;
@@ -461,11 +461,86 @@ section {
   border-radius: 8px;
 }
 
+/* Improved Checkout Modal for Mobile */
+#checkout-modal {
+  padding: 30px 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  border-radius: 16px;
+  max-width: 420px; /* Slightly smaller on larger screens */
+}
+
+#checkout-modal h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+#checkout-modal form input,
+#checkout-modal form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  margin: 12px 0;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  background: #f8f9fa;
+}
+
+#checkout-modal form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+#checkout-modal form button {
+  width: 100%;
+  padding: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#checkout-modal form button:hover {
+  background-color: #0056b3;
+}
+
 #close-checkout,
 #close-swap {
-  float: right;
+  position: absolute;
+  top: 15px;
+  right: 20px;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 32px;
+  color: #999;
+}
+
+/* Mobile-specific adjustments for checkout */
+@media (max-width: 480px) {
+  #checkout-modal {
+    width: 95%;
+    padding: 25px 15px;
+    max-width: none;
+  }
+  
+  #checkout-modal h2 {
+    font-size: 1.6rem;
+  }
+  
+  #checkout-modal form input,
+  #checkout-modal form textarea {
+    padding: 16px;
+    font-size: 1.05rem;
+  }
+  
+  #checkout-modal form button {
+    padding: 18px;
+    font-size: 1.2rem;
+  }
 }
 
 /* Modern Cart Modal */
@@ -769,8 +844,6 @@ footer {
         </div>
         <button id="load-more">Load More</button>
     </section>
-
-    <!-- Other sections (swap, about, contact) remain the same -->
 
     <!-- Cart Modal -->
     <div id="cart-modal">
@@ -1142,6 +1215,4 @@ document.head.insertAdjacentHTML('beforeend', `
         typeText();
     </script>
 </body>
-
 </html>
-
